@@ -8,7 +8,9 @@ export async function before(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner}) 
   const chat = global.db.data.chats[m.chat];
   const bot = global.db.data.settings[this.user.jid] || {};
   if (bot.antiPrivate && !isOwner && !isROwner) {
-    await m.reply(`_*< ANTI-PRIVADO />*_\n\n*HOLA, SOY  BUBBLE BOT , PARA HABLAR AL PRIVADO SOLO ES POSIBLE CON MI CREADOR, SI QUIERES ALQUILARME ENTRA AL SIGUIENTE GRUPO* https://chat.whatsapp.com/BjsGGECLMui1pl4L0GOxkH`, false, {mentions: [m.sender]});
+    await m.reply(`_*< ANTI-PRIVADO />*_\n\n*Hola... Soy Bubblebot bot para whatsapp, te recuerdo que esta prohibido enviar msj al privado.
+
+Si quieres comprarme comunicate con mi creador Andriiu +52 55 7608 8952 ó ingresa al siguiente grupo para probar mis funciones: https://chat.whatsapp.com/BjsGGECLMui1pl4L0GOxkH`, false, {mentions: [m.sender]});
     await this.updateBlockStatus(m.chat, 'block');
   }
   return !1;
